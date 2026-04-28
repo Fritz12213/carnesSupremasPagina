@@ -120,3 +120,22 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+// Expandable Product Cards Logic
+document.querySelectorAll('.product-card.expandable').forEach(card => {
+    card.addEventListener('click', (e) => {
+        // Toggle the expanded class
+        card.classList.toggle('expanded');
+        
+        // Update button text and icon
+        const btn = card.querySelector('.expand-btn');
+        const isExpanded = card.classList.contains('expanded');
+        
+        if (isExpanded) {
+            btn.innerHTML = `Ver menos <i class="fa-solid fa-chevron-up"></i>`;
+        } else {
+            btn.innerHTML = `Ver más <i class="fa-solid fa-chevron-down"></i>`;
+        }
+    });
+});
+
